@@ -1,13 +1,17 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import HomeScreen from './screens/HomeScreen';
+import { NavigationContainer } from '@react-navigation/native';
+
+import Router from './router';
+
 
 export default function App() {
+
   return (
-    <View style={styles.screen}>
-    
-      <HomeScreen/>
-    </View>
+    <NavigationContainer>
+   <Router/>
+    </NavigationContainer>
   );
 }
 

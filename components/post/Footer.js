@@ -10,11 +10,11 @@ const Footer = ({likesCount:likescountProps,caption,date}) => {
 const [ isLiked, setIsLiked] = useState(false);
 const [ likesCount, setIsLikedCount] = useState(0);
 
-const isLikePress =()=>{
+const isLikePress =( )=>{
+    setIsLiked(!isLiked);
     
     const amount = isLiked ? -1 : 1;
     setIsLikedCount(likesCount + amount);
-    setIsLiked(!isLiked);
 }
 
 useEffect(()=>{

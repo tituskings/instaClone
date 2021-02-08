@@ -1,21 +1,21 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList,ScrollView} from 'react-native';
-import Story from './Story';
+import Story from './UserStoryPreview';
 import image from './data';
 
 const data = {
 
 }
 
-const Stories = (props) => {
+const UserStoriesPreview = (props) => {
     return (
         <View style={styles.container} >
            <FlatList 
            data = {image}
-           keyExtractor={({text})=> text}
+           keyExtractor={({user :{id}})=> id}
            horizontal
            showsHorizontalScrollIndicator={false}
-           renderItem={({item}) => <Story imagesUri={item.user.imagesUri} text={item.user.text}/>}
+           renderItem={({item}) => <Story story={item}/>}
            />
         
         </View>
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Stories;
+export default UserStoriesPreview;

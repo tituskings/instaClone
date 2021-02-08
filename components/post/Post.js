@@ -5,11 +5,15 @@ import Body from './Body';
 import Footer from './Footer';
 
 const Post= ({post})=> {
+    
     return(
         <View>
             <Header imagesUri={post.user.imagesUri} text={post.user.text}/>
-            <Body image={post.imagesUri}/>
-            <Footer likesCount={post.likes} caption={post.caption} date={post.date}/>
+            <Body image={post.postData.imagesUri}/>
+            <Footer 
+            likesCount={post.postData.likes} 
+            caption={post.postData.caption} 
+            date={post.postData.time}/>
         </View>
     );
 };
